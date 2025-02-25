@@ -54,7 +54,7 @@ export default function ForgotPassword() {
               placeholder="Email"
               onChange={formik.handleChange}
               value={formik.values.email}
-              error={formik.touched.email && formik.errors.email}
+              error={formik.touched.email ? formik.errors.email : undefined}
             />
           </div>
           <Button type="submit" className="w-full" disabled={isLoading}>

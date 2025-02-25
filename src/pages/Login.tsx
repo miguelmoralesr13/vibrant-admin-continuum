@@ -60,7 +60,7 @@ export default function Login() {
               placeholder="Email"
               onChange={formik.handleChange}
               value={formik.values.email}
-              error={formik.touched.email && formik.errors.email}
+              error={formik.touched.email ? formik.errors.email : undefined}
             />
           </div>
           <div>
@@ -71,7 +71,7 @@ export default function Login() {
               placeholder="Password"
               onChange={formik.handleChange}
               value={formik.values.password}
-              error={formik.touched.password && formik.errors.password}
+              error={formik.touched.password ? formik.errors.password : undefined}
             />
           </div>
           <Button type="submit" className="w-full" disabled={isLoading}>
