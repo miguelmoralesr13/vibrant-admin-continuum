@@ -45,11 +45,33 @@ export default function Users() {
   };
 
   if (isLoading) {
-    return <div className="p-8" data-lov-id="src/pages/Users.tsx:48:11" data-lov-name="div" data-component-path="src/pages/Users.tsx" data-component-line="48" data-component-file="Users.tsx" data-component-name="div" data-component-content="%7B%22text%22%3A%22Loading...%22%2C%22className%22%3A%22p-8%22%7D">Loading...</div>;
+    return (
+      <div 
+        className="p-8"
+        data-lov-id="src/pages/Users.tsx:48:11"
+        data-lov-name="div"
+        data-component-path="src/pages/Users.tsx"
+        data-component-line="48"
+        data-component-file="Users.tsx"
+        data-component-name="div"
+        data-component-content="%7B%22text%22%3A%22Loading...%22%2C%22className%22%3A%22p-8%22%7D"
+      >
+        Loading...
+      </div>
+    );
   }
 
   return (
-    <div className="space-y-4 p-8" data-lov-id="src/pages/Users.tsx:52:4" data-lov-name="div" data-component-path="src/pages/Users.tsx" data-component-line="52" data-component-file="Users.tsx" data-component-name="div" data-component-content="%7B%22className%22%3A%22space-y-4%20p-8%22%7D">
+    <div 
+      className="space-y-4 p-8"
+      data-lov-id="src/pages/Users.tsx:52:4"
+      data-lov-name="div"
+      data-component-path="src/pages/Users.tsx"
+      data-component-line="52"
+      data-component-file="Users.tsx"
+      data-component-name="div"
+      data-component-content="%7B%22className%22%3A%22space-y-4%20p-8%22%7D"
+    >
       <DataTable<User>
         data={users}
         columns={columns}
