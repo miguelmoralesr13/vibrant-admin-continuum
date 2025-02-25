@@ -8,6 +8,7 @@ import { AuthLayout, DashboardLayout } from "./components/Layout";
 import { DevTools } from "./components/DevTools";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
+import Users from "./pages/Users";
 import { useAuthStore, useDarkModeStore } from "./lib/store";
 import { useEffect } from "react";
 
@@ -59,9 +60,9 @@ const App = () => {
 
             {/* Protected Routes */}
             <Route path="/dashboard" element={<ProtectedRoute><div>Dashboard</div></ProtectedRoute>} />
-            <Route path="/dashboard/users" element={<ProtectedRoute><div>Users</div></ProtectedRoute>} />
+            <Route path="/dashboard/users" element={<ProtectedRoute><Users /></ProtectedRoute>} />
             <Route path="/dashboard/profile" element={<ProtectedRoute><div>Profile</div></ProtectedRoute>} />
-            <Route path="/dashboard/reset-password" element={<ProtectedRoute><div>Reset Password</div></ProtectedRoute>} />
+            <Route path="/dashboard/settings" element={<ProtectedRoute><div>Settings</div></ProtectedRoute>} />
             
             {/* Not Found */}
             <Route path="*" element={<Navigate to="/" replace />} />
