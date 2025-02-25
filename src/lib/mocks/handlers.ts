@@ -2,8 +2,20 @@
 import { http, HttpResponse } from 'msw';
 import { useDevToolsStore } from '../store';
 
+// Define interfaces for our data types
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+
+interface LoginRequest {
+  email: string;
+  password: string;
+}
+
 // Mock data
-const users = [
+const users: User[] = [
   { id: 1, name: 'John Doe', email: 'john@example.com' },
   { id: 2, name: 'Jane Smith', email: 'jane@example.com' },
 ];
@@ -11,17 +23,17 @@ const users = [
 export const handlers = [
   // Auth endpoints
   http.post('/api/auth/login', async ({ request }) => {
-    const { email, password } = await request.json();
+    const data = await request.json() as LoginRequest;
     
     // Simulate API delay from DevTools store
     await new Promise(resolve => 
       setTimeout(resolve, useDevToolsStore.getState().apiDelay)
     );
 
-    if (email === 'admin@example.com' && password === 'password') {
+    if (data.email === 'admin@example.com' && data.password === 'password') {
       return HttpResponse.json({
         token: 'mock-jwt-token',
-        user: { id: 1, email, name: 'Admin User' }
+        user: { id: 1, email: data.email, name: 'Admin User' }
       });
     }
 
@@ -38,8 +50,12 @@ export const handlers = [
   }),
 
   http.post('/api/users', async ({ request }) => {
-    const newUser = await request.json();
-    users.push({ ...newUser, id: users.length + 1 });
+    const newUserData = await request.json() as Omit<User, 'id'>;
+    const newUser: User = {
+      ...newUserData,
+      id: users.length + 1
+    };
+    users.push(newUser);
     return HttpResponse.json(newUser);
   }),
 ];
