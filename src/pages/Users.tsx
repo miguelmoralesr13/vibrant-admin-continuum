@@ -50,13 +50,13 @@ export default function Users() {
 
   return (
     <div data-lov-id="src/pages/Users.tsx:52:4" data-lov-name="div" data-component-path="src/pages/Users.tsx" data-component-line="52" data-component-file="Users.tsx" data-component-name="div" data-component-content="%7B%22className%22%3A%22space-y-4%20p-8%22%7D" className="space-y-4 p-8">
-      <DataTable<User> 
-        data-lov-id="src/pages/Users.tsx:53:6" 
-        data-lov-name="DataTable"  
-        data-component-path="src/pages/Users.tsx" 
-        data-component-line="53" 
-        data-component-file="Users.tsx" 
-        data-component-name="DataTable" 
+      <DataTable<User>
+        data-lov-id="src/pages/Users.tsx:53:6"
+        data-lov-name="DataTable"
+        data-component-path="src/pages/Users.tsx"
+        data-component-line="53"
+        data-component-file="Users.tsx"
+        data-component-name="DataTable"
         data-component-content="%7B%7D"
         data={users}
         columns={columns}
