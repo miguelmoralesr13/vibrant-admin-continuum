@@ -55,7 +55,7 @@ export default function Users() {
         columns={columns}
         title="Users"
         onAdd={() => setIsAddModalOpen(true)}
-        onEdit={(user) => setEditingUser(user)}
+        onEdit={setEditingUser}
         onDelete={handleDelete}
       />
     </div>
